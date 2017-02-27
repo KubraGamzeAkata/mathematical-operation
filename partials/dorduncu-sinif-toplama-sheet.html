@@ -1,0 +1,57 @@
+<div class="seperator"></div>
+<div class="row">
+    <div class="twelve column">
+        <a ui-sref="{{back}}"><h2 class="title"><img src="img/toplama.png" alt="toplama">Toplama İşlemi <span>/ Ön İzleme</span></h2></a>
+    </div>
+</div>
+<div class="row">
+    <div class="two column">
+        <label for="title">Başlık</label>
+    </div>
+    <div class="seven column">
+        <input type="text" id="title" ng-model="title">
+    </div>
+</div>
+<div class="row">
+  <div class="two column">
+    <label for="operation-props">Cevapları Göster</label><br>
+  </div>
+  <div class="two column">
+    <select class="" id="operation-props" ng-model="options.show" ng-options="option.value as option.name for option in showAnswers">
+    </select>
+  </div>
+  <div class="two column offset-by-two">
+    <button ui-sref="{{back}}">Geri Dön</button>
+  </div>
+  <div class="two column">
+    <button ng-click="generate()">Değiştir</button>
+  </div>
+  <div class="two column">
+    <button ng-click="print()">Yazdır</button>
+  </div>
+</div>
+<style type="text/css" ng-if="options.show">
+    .operation .hide span{
+        visibility: visible;
+    }
+</style>
+<div class="sheet">
+  <img src="img/sheet.jpg" class="sheet-bg">
+  <div class="worksheet">
+        <div class="sheet-title">{{title}}</div>
+        <div ng-repeat="op in ops" class="operation {{grid}} {{alignments[$index]}}">
+            <div class="digit {{op.elements[0]}}"><span>{{op.x}}</span></div>
+            <div class="operation-line">+</div>
+            <div class="digit {{op.elements[1]}}"><span>{{op.y}}</span></div>
+            <div class="operation-line" ng-if="options.params.digits >= 3">+</div>
+            <div class="digit {{op.elements[2]}}" ng-if="options.params.digits >= 3"><span>{{op.z}}</span></div>
+            <div class="operation-line" ng-if="options.params.digits == 4">+</div>
+            <div class="digit {{op.elements[3]}}" ng-if="options.params.digits == 4"><span>{{op.t}}</span></div>
+            <div class="operation-line">=</div>
+            <div class="operation-symbol">+</div>
+            <div class="digit {{op.elements[4]}}" ng-if="options.params.digits == 4"><span>{{op.res}}</span></div>
+            <div class="digit {{op.elements[3]}}" ng-if="options.params.digits == 3"><span>{{op.res2}}</span></div>
+            <div class="digit {{op.elements[2]}}" ng-if="options.params.digits == 2"><span>{{op.res3}}</span></div>
+        </div>
+    </div>
+</div>

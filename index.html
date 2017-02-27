@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,400italic' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.min.css">
+  <link rel="stylesheet" href="dist/style.css" media="all">
+  <script src="dist/app.js" charset="utf-8"></script>
+</head>
+<body ng-app="app">
+  <div ng-controller="MainCtrl" class="container">
+    <h2>Dört İşlem Çalışma Kâğıdı Hazırlama</h2>
+    <ul class="tabs">
+      <li ng-class="{active: isActive('birinci-sinif')}"><a href="#" ui-sref="birinci-sinif.anasayfa">1. Sınıf</a></li>
+      <li ng-class="{active: isActive('ikinci-sinif')}"><a href="#" ui-sref="ikinci-sinif.anasayfa">2. Sınıf</a></li>
+      <li ng-class="{active: isActive('ucuncu-sinif')}"><a href="#" ui-sref="ucuncu-sinif.anasayfa">3. Sınıf</a></li>
+      <li ng-class="{active: isActive('dorduncu-sinif')}"><a href="#" ui-sref="dorduncu-sinif.anasayfa">4. Sınıf</a></li>
+    </ul>
+    <div class="view" ui-view></div>
+  </div>
+</body>
+</html>

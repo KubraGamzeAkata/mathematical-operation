@@ -1,0 +1,45 @@
+<div class="seperator"></div>
+<div class="row">
+  <div class="twelve column">
+    <h2 class="title"><img src="img/bolme.png" alt="bolme">Bölme İşlemi</h2>
+  </div>
+</div>
+<div class="row">
+  <div class="two column">
+    <label for="placement">Konu</label>
+  </div>
+  <div class="four column">
+    <select name="placement" id="" ng-model="options.prop" ng-options="option.value as option.name for option in props"></select>
+  </div>
+  <div class="two column">
+    <label for="placement">Bölünenin Basamak Sayısı</label>
+  </div>
+  <div class="four column">
+    <select name="placement" id="" ng-model="options.first" ng-options="option.value as option.name for option in firstDigits" ng-change="control()"></select>
+  </div>
+</div>
+<div class="row">
+  <div class="two column">
+    <label for="placement">İşlemin Türü</label>
+  </div>
+  <div class="four column">
+    <select name="placement" id="" ng-model="options.kind" ng-options="option.value as option.name for option in kinds"></select>
+  </div>
+  <div class="two column">
+    <label for="placement">Bölenin Basamak Sayısı</label>
+  </div>
+  <div class="four column">
+    <select name="placement" id="" ng-model="options.second">
+      <option value="1">1</option>
+      <option value="2" ng-disabled="options.first == '4'">2</option>
+    </select>
+  </div>
+</div>
+<div class="row">
+  <div class="three column offset-by-four">
+    <button ui-sref="dorduncu-sinif.bolme-sheet({first: options.first, second: options.second, prop: options.prop, kind: options.kind})">Çalışma Kâğıdını Hazırla</button>
+  </div>
+</div>
+<div class="three column offset-by-four back">
+  <button ui-sref="dorduncu-sinif.anasayfa">Geri Dön</button>
+</div>

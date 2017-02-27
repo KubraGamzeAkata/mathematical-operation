@@ -1,0 +1,64 @@
+<div class="seperator"></div>
+<div class="row">
+  <div class="twelve column">
+    <h2 class="title"><img src="img/cikarma.png" alt="cikarma">Çıkarma İşlemi</h2>
+  </div>
+</div>
+<div class="row">
+  <div class="two column">
+    <label for="operation-props">Konu</label><br>
+  </div>
+  <div class="four column">
+    <select class="" id="operation-props" ng-model="options.prop" ng-options="option.value as option.name for option in props"></select>
+  </div>
+  <div class="two column first-addition">
+    <div ng-class="{active: options.first == 2}" class="operation-box"></div>
+    <div ng-class="{active: options.first >= 1}" class="operation-box"></div>
+  </div>
+  <div class="three column">
+    <label for="digit-number-1">Eksilenin Basamak Sayısı</label>
+  </div>
+  <div class="one column">
+    <select ng-model="options.first" ng-change="control()">
+      <option value="1">1</option>
+      <option value="2">2</option>
+    </select>
+  </div>
+
+</div>
+<div class="row half-margin">
+  <div class="two column">
+    <label for="placement">Terimlerin Yerleşimi</label>
+  </div>
+  <div class="four column">
+    <select name="placement" id="" ng-model="options.direction" ng-options="option.value as option.name for option in directions"></select>
+  </div>
+  <div class="two column second-addition">
+    <div ng-class="{active: options.second == 2}" class="operation-box"></div>
+    <div ng-class="{active: options.second >= 1}" class="operation-box"></div>
+    <div class="operation-symbol">-</div>
+  </div>
+  <div class="three column">
+    <label for="addition-number-2">Çıkanın Basamak Sayısı</label>
+  </div>
+  <div class="one column">
+    <select ng-model="options.second">
+      <option value="1">1</option>
+      <option value="2" ng-disabled="options.first == '1'">2</option>
+    </select>
+  </div>
+</div>
+<div class="row half-margin">
+  <div class="two column">
+    <label for="operation-type">İşlemin Türü</label>
+  </div>
+  <div class="four column">
+    <select class="" id="operation-type" ng-model="options.kind" ng-options="option.value as option.name for option in kinds"></select>
+  </div>
+</div>
+<div class="three column offset-by-four">
+  <button ui-sref="ikinci-sinif.cikarma-sheet({first: options.first, second: options.second, direction: options.direction, prop: options.prop, kind: options.kind})">Çalışma Kâğıdını Hazırla</button>
+</div>
+<div class="three column offset-by-four back">
+  <button ui-sref="ikinci-sinif.anasayfa">Geri Dön</button>
+</div>

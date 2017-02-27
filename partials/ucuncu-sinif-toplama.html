@@ -1,0 +1,104 @@
+<style>
+  .operation-symbol {
+    position: absolute;;
+    width: 140px;
+  }
+  .generate{
+    margin-top: 45px;
+  }
+</style>
+<div class="seperator"></div>
+<div class="row">
+  <div class="twelve column">
+    <h2 class="title"><img src="img/toplama.png" alt="toplama">Toplama İşlemi</h2>
+  </div>
+</div>
+<div class="row half-margin">
+  <div class="two column">
+    <label for="operation-props">Konu</label><br>
+  </div>
+  <div class="four column">
+    <select class="" id="operation-props" ng-model="options.prop" ng-options="option.value as option.name for option in props"></select>
+  </div>
+  <div class="two column first-addition">
+    <div ng-class="{active: options.first == 3}" class="operation-box-s"></div>
+    <div ng-class="{active: options.first >= 2}" class="operation-box-s"></div>
+    <div ng-class="{active: options.first >= 1}" class="operation-box-s"></div>
+  </div>
+  <div class="three column">
+    <label for="digit-number-1">1. Toplanan Basamak Sayısı</label>
+  </div>
+  <div class="one column">
+    <select ng-model="options.first" ng-options="option.value as option.name for option in firstDigits"></select>
+  </div>
+</div>
+<div class="row half-margin">
+  <div class="two column">
+    <label for="placement">Terimlerin Yerleşimi</label>
+  </div>
+  <div class="four column">
+    <select name="placement" id="" ng-model="options.direction" ng-options="option.value as option.name for option in directions"></select>
+  </div>
+  <div class="two column second-addition">
+    <div ng-class="{active: options.second == 3}" class="operation-box-s"></div>
+    <div ng-class="{active: options.second >= 2}" class="operation-box-s"></div>
+    <div ng-class="{active: options.second >= 1}" class="operation-box-s"></div>
+    <div class="operation-symbol" ng-if="options.digits == 2">+</div>
+  </div>
+  <div class="three column">
+    <label for="addition-number-2">2. Toplanan Basamak Sayısı</label>
+  </div>
+  <div class="one column">
+    <select ng-model="options.second" ng-options="option.value as option.name for option in secondDigits"></select>
+  </div>
+</div>
+<div class="row half-margin">
+  <div class="two column">
+    <label for="placement">İşlemin Türü</label>
+  </div>
+  <div class="four column">
+    <select name="kind" id="" ng-model="options.kind" ng-options="option.value as option.name for option in kinds"></select>
+  </div>
+  <div ng-if="options.digits >= 3">
+    <div class="two column third-addition">
+      <div ng-class="{active: options.third == 3}" class="operation-box-s"></div>
+      <div ng-class="{active: options.third >= 2}" class="operation-box-s"></div>
+      <div ng-class="{active: options.third >= 1}" class="operation-box-s"></div>
+      <div class="operation-symbol" ng-if="options.digits == 3">+</div>
+    </div>
+    <div class="three column">
+      <label for="addition-number-3">3. Toplanan Basamak Sayısı</label>
+    </div>
+    <div class="one column">
+      <select ng-model="options.third" ng-options="option.value as option.name for option in thirdDigits"></select>
+    </div>
+  </div>
+</div>
+<div class="row half-margin">
+  <div class="two column">
+    <label for="addition-number">Toplanan Sayısı</label>
+  </div>
+  <div class="four column">
+    <select ng-model="options.digits" ng-options="option.value as option.name for option in digitsNumber"></select>
+  </div>
+  <div ng-if="options.digits == 4">
+    <div class="two column third-addition">
+      <div ng-class="{active: options.fourth == 3}" class="operation-box-s"></div>
+      <div ng-class="{active: options.fourth >= 2}" class="operation-box-s"></div>
+      <div ng-class="{active: options.fourth >= 1}" class="operation-box-s"></div>
+      <div class="operation-symbol">+</div>
+    </div>
+    <div class="three column">
+      <label for="addition-number-3">4. Toplanan Basamak Sayısı</label>
+    </div>
+    <div class="one column">
+      <select ng-model="options.fourth" ng-options="option.value as option.name for option in fourthDigits"></select>
+    </div>
+  </div>
+</div>
+<div class="three column offset-by-four generate">
+  <button ui-sref="ucuncu-sinif.toplama-sheet({digits: options.digits, first: options.first, second: options.second, third: options.third, fourth: options.fourth, direction: options.direction, prop: options.prop, kind: options.kind})">Çalışma Kâğıdını Hazırla</button>
+</div>
+<div class="three column offset-by-four back">
+  <button ui-sref="ucuncu-sinif.anasayfa">Geri Dön</button>
+</div>

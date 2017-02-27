@@ -1,0 +1,43 @@
+<div class="seperator"></div>
+<div class="row">
+  <div class="twelve column">
+    <h2 class="title"><img src="img/carpma.png" alt="carpma">Çarpma İşlemi</h2>
+  </div>
+</div>
+<div class="row half-margin">
+  <div class="two column first-addition">
+      <div class="operation-box-s active"></div>
+      <div class="operation-box-s active"></div>
+      <div class="operation-box-s active"></div>
+  </div>
+  <div class="three column">
+    <label for="digit-number-1">1. Çarpan Basamak Sayısı</label>
+  </div>
+  <div class="one column">
+    <select class="" id="digit-number-1">
+      <option>3</option>
+    </select>
+  </div>
+</div>
+<div class="row half-margin">
+  <div class="two column second-addition">
+    <div class="operation-box-s"></div>
+    <div class="operation-box-s active"></div>
+    <div class="operation-box-s active"></div>
+    <div class="operation-symbol">-</div>
+  </div>
+  <div class="three column">
+    <label for="addition-number-2">2. Çarpan Basamak Sayısı</label>
+  </div>
+  <div class="one column">
+    <select class="" id="operation-number-2">
+      <option>2</option>
+    </select>
+  </div>
+</div>
+<div class="three column offset-by-four">
+  <button ui-sref="dorduncu-sinif.carpma-sheet({first: 3, second: 2})">Çalışma Kâğıdını Hazırla</button>
+</div>
+<div class="three column offset-by-four back">
+  <button ui-sref="dorduncu-sinif.anasayfa">Geri Dön</button>
+</div>

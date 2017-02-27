@@ -1,0 +1,20 @@
+<div class="seperator"></div>
+<div class="row">
+  <div class="twelve column">
+    <h2 class="title"><img src="img/carpma.png" alt="carpma">Çarpma İşlemi</h2>
+  </div>
+</div>
+<div class="row half-margin">
+  <div class="two column">
+    <label for="placement">Terimlerin Yerleşimi</label>
+  </div>
+  <div class="ten column">
+    <select name="placement" id="" ng-model="options.direction" ng-options="option.value as option.name for option in directions"></select>
+  </div>
+</div>
+<div class="three column offset-by-four">
+  <button ui-sref="ikinci-sinif.carpma-sheet({direction: options.direction})">Çalışma Kâğıdını Hazırla</button>
+</div>
+<div class="three column offset-by-four back">
+  <button ui-sref="ikinci-sinif.anasayfa">Geri Dön</button>
+</div>

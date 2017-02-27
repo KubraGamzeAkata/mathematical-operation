@@ -1,0 +1,45 @@
+<div class="seperator"></div>
+<div class="row">
+  <div class="twelve column">
+    <h2 class="title"><img src="img/carpma.png" alt="carpma">Çarpma İşlemi</h2>
+  </div>
+</div>
+<div class="row half-margin">
+  <div class="two column first-addition">
+    <div ng-class="{active: options.first == 3}" class="operation-box-s"></div>
+    <div ng-class="{active: options.first >= 2}" class="operation-box-s"></div>
+    <div ng-class="{active: options.first >= 1}" class="operation-box-s"></div>
+  </div>
+  <div class="three column">
+    <label for="digit-number-1">1. Çarpan Basamak Sayısı</label>
+  </div>
+  <div class="one column">
+    <select ng-model="options.first" ng-change="control()">
+      <option value="2">2</option>
+      <option value="3">3</option>
+    </select>
+  </div>
+</div>
+<div class="row half-margin">
+  <div class="two column second-addition">
+    <div ng-class="{active: options.second == 3}" class="operation-box-s"></div>
+    <div ng-class="{active: options.second >= 2}" class="operation-box-s"></div>
+    <div ng-class="{active: options.second >= 1}" class="operation-box-s"></div>
+    <div class="operation-symbol">-</div>
+  </div>
+  <div class="three column">
+    <label for="addition-number-2">2. Çarpan Basamak Sayısı</label>
+  </div>
+  <div class="one column">
+    <select ng-model="options.second">
+      <option value="1">1</option>
+      <option value="2" ng-disabled="options.first == '3'">2</option>
+    </select>
+  </div>
+</div>
+<div class="three column offset-by-four">
+  <button ui-sref="ucuncu-sinif.carpma-sheet({first: options.first, second: options.second})">Çalışma Kâğıdını Hazırla</button>
+</div>
+<div class="three column offset-by-four back">
+  <button ui-sref="ucuncu-sinif.anasayfa">Geri Dön</button>
+</div>
